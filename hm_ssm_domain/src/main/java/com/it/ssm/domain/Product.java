@@ -1,5 +1,7 @@
 package com.it.ssm.domain;
 
+import com.it.ssm.utils.DataUtils;
+
 import java.util.Date;
 
 /**
@@ -50,6 +52,7 @@ public class Product {
     }
 
     public Date getDepartureTime() {
+
         return departureTime;
     }
 
@@ -58,6 +61,9 @@ public class Product {
     }
 
     public String getDepartureTimeStr() {
+        if (departureTime!=null){
+            departureTimeStr= DataUtils.dateToString(departureTime,"yyyy-mm-dd HH:mm:ss");
+        }
         return departureTimeStr;
     }
 
@@ -90,6 +96,15 @@ public class Product {
     }
 
     public String getProductStatusStr() {
+        if(productStatus !=null){
+            //状态 0关闭 1开启
+            if (productStatus==0){
+                productStatusStr="关闭";
+            }
+            if (productStatus==1){
+                productStatusStr="开启";
+            }
+        }
         return productStatusStr;
     }
 
