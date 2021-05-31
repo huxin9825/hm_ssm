@@ -23,7 +23,7 @@ public class ProductController {
 
         modelAndView.addObject("productList",ps);
 
-        modelAndView.setViewName("product-list");
+        modelAndView.setViewName("product-list1");
         return modelAndView;
     }
 }
