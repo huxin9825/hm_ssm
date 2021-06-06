@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="seurity" uri="http://www.springframework.org/tags" %>
 <aside class="main-sidebar">
 	<!-- sidebar: style can be found in sidebar.less -->
 	<section class="sidebar">
@@ -11,7 +11,7 @@
 					class="img-circle" alt="User Image">
 			</div>
 			<div class="pull-left info">
-				<p>xxx</p>
+				<p><security:authentication property="principal.username"/></p>
 				<a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
 			</div>
 		</div>
@@ -33,7 +33,7 @@
 				<ul class="treeview-menu">
 
 					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/user/findAll.do"> <i
+						href="${pageContext.request.contextPath}/users/findAll.do"> <i
 							class="fa fa-circle-o"></i> 用户管理
 					</a></li>
 					<li id="system-setting"><a
